@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct RepositoryTask: Cancellable {
+public struct RepositoryTask: Cancellable {
     let operation: OperationQueue?
     
-    func cancel() {
+    public func cancel() {
         operation?.cancelAllOperations()
     }
 }

@@ -74,17 +74,18 @@ public final class DefaultKeychainStorage  {
 
 extension DefaultKeychainStorage: UserSessionDataStorage {
     
-    public func readUserSession(completion: @escaping CredentialsCompletion) -> OperationQueue {
+    public func readUserSession(completion: @escaping CredentialsCompletion) -> Cancellable? {
         let operation = OperationQueue()
         operation.addOperation { [weak self] in
             guard let self = self else { return }
             self.readUserSessionAsync(completion: completion)
         }
         operation.waitUntilAllOperationsAreFinished()
-        return operation
+        
+        return RepositoryTask(operation: operation)
     }
     
-    public func saveUserSession(userSession: UserSession, completion: @escaping CredentialsCompletion) -> OperationQueue {
+    public func saveUserSession(userSession: UserSession, completion: @escaping CredentialsCompletion) -> Cancellable? {
         let operation = OperationQueue()
                 print("************** HOLD ON **************")
         operation.addOperation { [weak self] in
@@ -94,20 +95,20 @@ extension DefaultKeychainStorage: UserSessionDataStorage {
         operation.waitUntilAllOperationsAreFinished()
 
         print("Saving User")
-        return operation
+        return RepositoryTask(operation: operation)
     }
     
-    public func deleteUserSession(completion: @escaping CredentialsCompletion) -> OperationQueue {
+    public func deleteUserSession(completion: @escaping CredentialsCompletion) -> Cancellable? {
         let operation = OperationQueue()
         operation.addOperation { [weak self] in
             guard let self = self else { return }
             self.deleteUserSessionAsync(completion: completion)
         }
         operation.waitUntilAllOperationsAreFinished()
-        return operation
+        return RepositoryTask(operation: operation)
     }
     
-    public func updateUserSession(userSession: UserSession, completion: @escaping CredentialsCompletion) -> OperationQueue {
+    public func updateUserSession(userSession: UserSession, completion: @escaping CredentialsCompletion) -> Cancellable? {
         let operation = OperationQueue()
         operation.addOperation { [weak self] in
             guard let self = self else { return }
@@ -116,7 +117,7 @@ extension DefaultKeychainStorage: UserSessionDataStorage {
             userSession.logSession()
         }
         operation.waitUntilAllOperationsAreFinished()
-        return operation
+        return RepositoryTask(operation: operation)
     }
    
 }
