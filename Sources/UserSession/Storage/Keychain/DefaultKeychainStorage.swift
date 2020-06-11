@@ -23,7 +23,7 @@ public final class DefaultKeychainStorage  {
     }
     private let userSessionCoder: UserSessionCoding
     
-    init(userSessionCoder: UserSessionCoding) {
+    public init(userSessionCoder: UserSessionCoding) {
         self.userSessionCoder = userSessionCoder
     }
     
