@@ -10,7 +10,7 @@ import Foundation
 public class UserSessionPropertyListCoder: UserSessionCoding {
      
     
-    init() {}
+    public init() {}
     
     public func encode(userSession: UserSession) -> Data {
         return try! PropertyListEncoder().encode(userSession)
