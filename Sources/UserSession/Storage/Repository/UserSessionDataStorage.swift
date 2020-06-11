@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol UserSessionDataStorage {
+public protocol UserSessionDataStorage {
     
     func readUserSession(completion: @escaping CredentialsCompletion) -> OperationQueue
     func saveUserSession(userSession: UserSession, completion: @escaping CredentialsCompletion) -> OperationQueue
