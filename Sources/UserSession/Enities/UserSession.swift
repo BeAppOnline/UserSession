@@ -30,7 +30,7 @@ public struct UserSession {
     }
     
     
-    func logSession() {
+    public func logSession() {
         print("profile \(profile)")
         print("Profile.Name \(profile.name)")
         print("Profile.email \(profile.email)")
