@@ -8,14 +8,14 @@
 import Foundation
 
 public struct UserSubscriptions {
-    var transactionDate: Date
-    var expireDate: Date
-    var transactionState: Int
-    var productIdentifier: String
-    var applicationUserName: String?
-    var status: Bool
+    public var transactionDate: Date
+    public var expireDate: Date
+    public var transactionState: Int
+    public var productIdentifier: String
+    public var applicationUserName: String?
+    public var status: Bool
     
-    func isPurchaseActive() -> Bool {
+    open func isPurchaseActive() -> Bool {
         let userDef = UserDefaults.standard
         if userDef.bool(forKey: productIdentifier) {
             return isCurrentSubscriptionActive(exDate: expireDate)
