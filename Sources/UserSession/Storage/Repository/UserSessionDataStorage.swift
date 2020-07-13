@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Cancellable
 
 public protocol UserSessionDataStorage {
     

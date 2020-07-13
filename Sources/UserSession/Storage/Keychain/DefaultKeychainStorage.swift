@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Cancellable
 
 public protocol UserSessionCoding {
     func encode(userSession: UserSession) -> Data
