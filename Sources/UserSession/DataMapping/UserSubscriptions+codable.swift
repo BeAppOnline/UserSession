@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension UserSubscriptions: Codable {
+extension UserSubscription: Codable {
     
     private enum CodingKeys: String, CodingKey {
         case expireDate

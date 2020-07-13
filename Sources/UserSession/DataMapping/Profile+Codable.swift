@@ -23,7 +23,7 @@ extension Profile: Codable {
         self.email = try container.decode(String.self, forKey: .email)
         self.mobileNumber = try container.decode(String.self, forKey: .mobileNumber)
         self.avatar = try container.decode(String.self, forKey: .avatar)
-        self.products = try container.decode([UserSubscriptions].self, forKey: .products)
+        self.products = try container.decode([UserSubscription].self, forKey: .products)
     }
     
     public func encode(to encoder: Encoder) throws {

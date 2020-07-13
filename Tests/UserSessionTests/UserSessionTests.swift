@@ -6,7 +6,7 @@ final class UserSessionTests: XCTestCase {
     lazy var appDIContainer = AppDIContainer()
     
     func testUserSession() -> UserSession {
-        let userSubscriptions: [UserSubscriptions] = []
+        let userSubscriptions: [UserSubscription] = []
         let profile: Profile = Profile(name: "Ali Fakih", email: "afdetails@gmail.com", mobileNumber: "96176408484", avatar: "", products: userSubscriptions)
         let deeplinkSpecs: DeeplinkUserSession = DeeplinkUserSession()
         let userSession: UserSession = UserSession(profile: profile, deeplinkUserSession: deeplinkSpecs)
@@ -81,6 +81,13 @@ final class UserSessionTests: XCTestCase {
             }
         })
         wait(for: [expectation], timeout: 1)
+    }
+    
+    
+    func testUserModel() {
+        let userSubscription = UserSubscription(transactionDate: Date(), expireDate: Date(), transactionState: 0, productIdentifier: "", applicationUserName: "", status: true)
+        let _ = userSubscription.expireDate
+        let _ = userSubscription.isPurchaseActive()
     }
     
 

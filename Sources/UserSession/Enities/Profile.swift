@@ -12,9 +12,9 @@ public struct Profile {
     public let email: String
     public let mobileNumber: String
     public let avatar: String
-    public var products: [UserSubscriptions]
+    public var products: [UserSubscription]
     
-    public init(name: String, email: String, mobileNumber: String, avatar: String, products: [UserSubscriptions]) {
+    public init(name: String, email: String, mobileNumber: String, avatar: String, products: [UserSubscription]) {
         self.name = name
         self.email = email
         self.mobileNumber = mobileNumber
