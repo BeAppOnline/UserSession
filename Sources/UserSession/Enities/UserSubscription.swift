@@ -8,7 +8,7 @@
 import Foundation
 
 public struct UserSubscription {
-    init(transactionDate: Date, expireDate: Date, transactionState: Int, productIdentifier: String, applicationUserName: String? = nil, status: Bool) {
+    public init(transactionDate: Date, expireDate: Date, transactionState: Int, productIdentifier: String, applicationUserName: String? = nil, status: Bool) {
         self.transactionDate = transactionDate
         self.expireDate = expireDate
         self.transactionState = transactionState
