@@ -17,4 +17,8 @@ public struct DeeplinkUserSession {
     public func isValidDeeplinkUser() -> Bool {
         return self.deeplink != nil
     }
+    
+    public func getDeeplink() -> String? {
+        return deeplink
+    }
 }
